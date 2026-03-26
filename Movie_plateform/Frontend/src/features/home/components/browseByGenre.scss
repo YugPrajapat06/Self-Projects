@@ -1,0 +1,62 @@
+@use "../../shared/style/global.scss" as *;
+
+.BrowseByGenre {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+    .btns {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        animation: slideBtn;
+        animation-timeline: view();
+        animation-range: entry 0% cover 50%;
+
+        @media (max-width: 1024px) {
+            animation: none;
+        }
+        @media (max-width: 600px) {
+            animation: none;
+        }
+        button {
+            // padding-inline: 4rem;
+            padding-block: 2.5rem;
+            width: 200px;
+            // display: flex;
+            // align-items: center;
+            text-align: center;
+
+            @media (max-width: 1024px) {
+                // padding-inline: 3rem;
+                padding-block: 2rem;
+                width: 180px;
+                align-items: center;
+            }
+            @media (max-width: 600px) {
+                // padding-inline: 2rem;
+                padding-block: 1.5rem;
+                width: 120px;
+                align-items: center;
+                
+            }
+
+            border: 1px solid $border ;
+            cursor: pointer;
+            background-color: $bg2;
+            color: $text1;
+            border-radius: 5px;
+        }
+    }
+
+    @keyframes slideBtn {
+        from {
+            transform: translateX(50%);
+        }
+        to{
+            transform: translateX(0);
+        }
+    }
+}

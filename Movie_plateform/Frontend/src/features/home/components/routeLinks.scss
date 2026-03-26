@@ -1,0 +1,22 @@
+@use "../../shared/style/global.scss" as *;
+.links {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        background-color: rgba(15, 15, 15, 0.226);
+        padding-inline: 40px;
+        padding-block: 10px;
+        border-radius: 10px;
+    }
+
+    a {
+        font-size: 18px;
+        font-weight: bold;
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        font-family: $font4;
+
+        &:active {
+            color: $sec;
+        }
+    }

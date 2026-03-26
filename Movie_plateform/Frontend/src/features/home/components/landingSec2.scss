@@ -1,0 +1,98 @@
+@use "../../shared/style/global.scss" as *;
+
+
+.LandingSec2 {
+    // min-height: 100vh;
+    width: 100%;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    background-color: rgba(1, 134, 151, 0.192);
+    border-top: 1px solid $border;
+    padding-block: 2rem;
+    padding-inline: 3rem;
+
+    @media (max-width: 1024px) {
+        padding-inline: 2rem;
+    }
+
+    @media (max-width: 600px) {
+        padding-inline: 1.5rem;
+    }
+
+    .trandingText {
+        width: max-content;
+        height: fit-content;
+        display: flex;
+        align-items: stretch;
+        gap: 0.5rem;
+        padding-inline: 10px;
+        margin-top: 3rem;
+
+        .redLine {
+            width: 6px;
+            // height: 100%;
+            background-color: red;
+        }
+    }
+
+    .cards {
+        display: flex;
+        width: 100%;
+        gap: 1rem;
+
+        .card {
+            width: 600px;
+            height: 480px;
+            overflow: hidden;
+
+
+            @media (max-width: 1024px) {
+                width: 370px;
+                height: 250px;
+            }
+
+            @media (max-width: 600px) {
+                width: 320px;
+                height: 200px;
+            }
+
+            .img {
+                height: 80%;
+                width: 100%;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: inset 0 0px 30px rgba(0, 0, 0, 0.6);
+                position: relative;
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                }
+
+
+            }
+
+            .video {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                opacity: 0;
+            }
+
+
+            &:hover img {
+                opacity: 0;
+            }
+
+            &:hover iframe {
+                opacity: 1;
+            }
+
+            p {
+                color: rgb(122, 122, 122);
+            }
+        }
+    }
+}

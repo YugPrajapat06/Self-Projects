@@ -1,0 +1,132 @@
+@use "../../shared/style/global.scss" as *;
+
+.ImageChanger {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+
+    .videoLayer {
+        height: 100%;
+        width: 100%;
+
+        video {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+    }
+
+    .leftSideCard {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: linear-gradient(90deg, black 5%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 5%, rgb(0, 0, 0));
+        padding-top: 80px;
+        padding-inline: 2rem;
+        display: flex;
+        justify-items: flex-start;
+        align-items: center;
+
+        .details {
+            width: 40%;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: start;
+
+            h1 {
+                margin-top: 1rem;
+                font-size: clamp(2rem, 6vw, 6rem);
+                font-family: $font1;
+            }
+
+            p {
+                font-size: clamp(0.6rem , 3vw , 1.2rem);
+                
+            }
+            .btns {
+                display: flex;
+                gap: 2rem;
+
+                button , .btn2{
+                    font-size: clamp(0.8rem, 2vw, 1.5rem);
+                    padding-inline: 10px;
+                    padding-top: 10px;
+                    padding-bottom: 15px;
+                    border-top-left-radius: 5px;
+                    border-top-right-radius: 5px;
+                    // border: 2px solid $border;
+                    // border-bottom: none;
+                    border: none;
+                    margin-top: 1rem;
+                    cursor: pointer;
+                    text-align: center;
+                    font-size: 20px;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+
+    // DASHBOARD HERE
+
+    .dashboard {
+        height: 80%;
+        max-height: 500px;
+        padding: 10px;
+        width: 80%;
+        background-color: rgba(248, 248, 248, 0.473);
+        border: 2px solid rgb(177, 171, 171);
+        border-radius: 2rem;
+        display: flex;
+        gap: 1rem;
+        position: absolute;
+        z-index: 2;
+        top: 15%;
+        left: 10%;
+
+        .coverImages {
+            height: 100%;
+            width: 100%;
+            position: relative;
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                border-radius: 1rem;
+            }
+        }
+
+        .details {
+            max-height: 90%;
+            width: 50%;
+            background-color: rgba(2, 2, 2, 0.459);
+            padding: 1.5rem;
+            color: rgb(255, 255, 255);
+            border-radius: 1rem;
+            display: flex;
+            flex-direction: column;
+            overflow-y: scroll;
+            scrollbar-width: none;
+            position: absolute;
+            bottom: 5%;
+            left: 5%;
+            gap: 1rem;
+
+            span {
+                font-weight: 500;
+            }
+
+            button {
+                //Already give a class button to the <Button>
+                width: max-content;
+            }
+        }
+    }
+}

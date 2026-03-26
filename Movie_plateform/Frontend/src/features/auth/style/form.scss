@@ -1,0 +1,60 @@
+@use "../../shared/style/global.scss" as *;
+
+.login-page,.register-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+    .form-container{
+        background-color: #fff;
+        color: #000;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        
+        h1{
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        p{
+            margin-top: 10px;
+            color: red;
+        }
+        .form-group{
+            margin-bottom: 1rem;
+            
+            label{
+                display: block;
+                margin-bottom: 0.5rem;
+            }
+            
+            input{
+                width: 100%;
+                padding: 0.5rem;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                outline: none;
+            }
+        }
+        
+        button{
+            width: 100%;
+            padding: 0.75rem;
+            background-color: $pri;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            
+            &:hover{
+                background-color: rgb(65, 65, 65);
+                color: $text1;
+            }
+            &:active{
+                transform: scale(0.95);
+            }
+        }
+    }
+}

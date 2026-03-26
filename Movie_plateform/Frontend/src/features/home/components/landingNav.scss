@@ -1,0 +1,60 @@
+@use "../../shared/style/global.scss" as *;
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    height: 4rem;
+    h1 {
+        font-family: $font1;
+        font-size: clamp(0.8rem , 4vw , 1.5rem);
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        span{
+            color: $pri;
+        }
+    }
+
+    .btns {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        .userBox{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: rgba(0, 0, 0, 0.363);
+            padding-inline: 10px;
+            padding-block: 4px;
+            border-radius: 5px;
+            
+            img{
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        }
+        button {
+            padding: 10px 20px;
+            color: $text1;
+            font-size: clamp(0.6rem, 2vw , 0.8rem);
+
+            @media (max-width = 1024px) {
+                padding: 8px 15px;
+            }
+            @media (max-width = 600px) {
+                padding: 6px 12px;
+            }
+            &.textBlack {
+                color: $text2;
+            }
+
+            &:active {
+                transform: scale(0.95);
+            }
+        }
+
+    }
+}
