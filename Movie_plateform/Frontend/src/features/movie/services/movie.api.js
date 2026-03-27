@@ -5,7 +5,7 @@ const api = axios.create({
     withCredentials: true,
 })
 
-export async function createMovie({ title, description, releaseDate, genre, rating, movieFile, coverFile }) {
+export async function createMovie({ title, description, releaseDate, genre, rating, duration, movieFile, coverFile }) {
 
     const formData = new FormData();
 
@@ -14,7 +14,7 @@ export async function createMovie({ title, description, releaseDate, genre, rati
     formData.append("releaseDate", releaseDate);
     formData.append("genre", genre);
     formData.append("rating", rating);
-
+    formData.append("duration", duration);
     formData.append("movie", movieFile);   // video file
     formData.append("cover", coverFile);   // poster image
 

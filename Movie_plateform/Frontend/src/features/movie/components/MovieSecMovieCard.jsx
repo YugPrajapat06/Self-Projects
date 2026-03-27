@@ -17,7 +17,7 @@ const MovieSecMovieCard = ({ movies }) => {
                         <h3 className="title">{movie.title}</h3>
 
                         <p className="desc">
-                            {movie.description.length > 80
+                            {movie.description?.length > 80
                                 ? movie.description.slice(0, 80) + "..."
                                 : movie.description}
                         </p>

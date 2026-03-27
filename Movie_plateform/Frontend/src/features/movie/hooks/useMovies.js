@@ -11,6 +11,7 @@ export function useMovies() {
         try {
             const newMovie = await createMovie(movieData)
             setMovies(prevMovies => [...prevMovies, newMovie])
+            return newMovie
         } catch (error) {
             console.error("Failed to create movie:", error)
         } finally {

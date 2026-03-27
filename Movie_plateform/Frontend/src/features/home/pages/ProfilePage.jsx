@@ -1,7 +1,7 @@
 import React from 'react'
 import "../style/profile.scss"
+import { useNavigate } from 'react-router'
 const ProfilePage = () => {
-
   const mediaArr = [
     {
       name: "Squid Games",
@@ -19,6 +19,7 @@ const ProfilePage = () => {
       cls: "inactive"
     }
   ]
+  const navigate = useNavigate()
   return (
     <div className="profilePage">
       <div className='profile'>
@@ -35,7 +36,9 @@ const ProfilePage = () => {
 
           <div className="addMovie lineup">
             <p>Are you want to add New movie {"(Only for Admin)"} : </p>
-            <button className='button'>Add Movie</button>
+            <button onClick={()=>{
+              navigate("/admin/add-movie")
+            }} className='button'>Add Movie</button>
           </div>
         </div>
         <div className="profilePhoto">

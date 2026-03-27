@@ -6,6 +6,8 @@ import Protected from "./features/auth/components/Protected";
 import LandingPage from "./features/home/pages/LandingPage";
 import ShowTrailer from "./features/movie/pages/ShowTrailer";
 import ProfilePage from "./features/home/pages/ProfilePage";
+import AddMovies from "./features/movie/pages/addMovies";
+// import AddMovies from "./features/movie/pages/AddMovies";
 
 export const appRouter = createBrowserRouter([
     {
@@ -31,6 +33,10 @@ export const appRouter = createBrowserRouter([
     {
         path: "/profile",
         element: <Protected><ProfilePage/></Protected>
+    },
+    {
+        path: "/admin/add-movie",
+        element: <Protected><AddMovies/></Protected>
     }
 ])
 

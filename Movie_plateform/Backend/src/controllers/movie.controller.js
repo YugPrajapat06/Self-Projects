@@ -7,6 +7,8 @@ async function CreateMovieController(req, res) {
     const movieFile = req.files.movie[0]
     const coverFile = req.files.cover[0]
     console.log(movieFile);
+    console.log(coverFile);
+    
 
     const [ movie , cover] = await Promise.all([
         storageService.uploadFile({
@@ -31,6 +33,7 @@ async function CreateMovieController(req, res) {
         coverUrl: cover.url
     })
     res.status(201).json({
+        success: true,
         message: "Movie created successfully",
         movie: Movie
     })
