@@ -15,7 +15,12 @@ $font1 : Unbounded;
 $font2 : Satisfy;
 $font3 : Parisienne;
 $font4 : Ephesis;
+$fontSign : Meddon;
 
+@font-face {
+    font-family: Meddon;
+    src: url(../../../assets/fonts/Meddon-Regular.ttf);
+}
 @font-face {
     font-family: Unbounded;
     src: url(../../../assets/fonts/Unbounded-VariableFont_wght.ttf);

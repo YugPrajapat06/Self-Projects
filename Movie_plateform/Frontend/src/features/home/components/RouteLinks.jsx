@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router'
+import "./RouteLinks.scss"
 
 const RouteLinks = () => {
     return (

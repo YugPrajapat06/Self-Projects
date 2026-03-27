@@ -1,0 +1,178 @@
+@use "../../shared/style/global.scss" as *;
+
+.profilePage {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    .profile {
+        display: flex;
+        // flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+
+        .profileDetails {
+            height: 100%;
+            width: 50%;
+            // background-color: red;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            padding: 2rem;
+
+            .greetings {
+                font-size: 2.5rem;
+
+                .userName {
+                    color: red;
+                }
+            }
+
+            .signName {
+                font-family: $fontSign;
+                font-size: 4rem;
+            }
+
+            .logout {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                border: 1px solid rgb(255, 255, 255);
+                padding-inline: 1.3rem;
+                padding-block: 1rem;
+                border-radius: 10px;
+
+                p {
+                    color: rgb(255, 255, 255);
+                    font-size: medium;
+                }
+
+                button {
+                    border: none;
+                    background: none;
+                    color: red;
+                    font-size: medium;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .profilePhoto {
+            height: 100%;
+            width: 50%;
+            background-color: blanchedalmond;
+            overflow: hidden;
+            clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 0% 100%);
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                transform: translateX(10%) translateY(0%);
+            }
+        }
+    }
+
+    .mediaCase {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        justify-content: center;
+        align-items: center;
+
+        .achievements-section {
+            display: flex;
+            width: 100%;
+            justify-content: space-evenly;
+            align-items: center;
+
+            .achievements {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                justify-content: center;
+                align-items: center;
+                animation: slideToUp;
+                animation-timeline: view();
+                animation-range: entry 0% cover 50%;
+
+                h2 {
+                    font-size: 2rem;
+                }
+
+                p {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
+        @keyframes slideToUp {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0%);
+                opacity: 1;
+            }
+        }
+
+        .media {
+            height: 250px;
+            width: 60%;
+            background-color: rgba(255, 255, 255, 0.192);
+            display: flex;
+            padding: 5px;
+            gap: 5px;
+            animation: slideToUp;
+            animation-timeline: view();
+            animation-range: entry 0% cover 50%;
+
+            .mediaCard {
+                height: 100%;
+                width: calc(100% / 3);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: relative;
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+
+                .mediaName {
+                    position: absolute;
+                    bottom: 0;
+                    width: 90%;
+                    height: 40px;
+                    padding-inline: 10px;
+                    padding-block: 5px;
+                    text-align: center;
+                    background: rgba(184, 184, 184, 0.144);
+                    backdrop-filter: blur(5px);
+                }
+
+
+                &:hover {
+                    width: 50%;
+                    cursor: pointer;
+                    transition: all 0.2s linear;
+                }
+            }
+        }
+    }
+}
+
+.lineup{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}

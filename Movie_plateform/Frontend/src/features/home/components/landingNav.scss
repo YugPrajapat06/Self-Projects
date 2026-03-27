@@ -1,25 +1,51 @@
 @use "../../shared/style/global.scss" as *;
 
-.navbar {
+.LanNavbar {
     display: flex;
     justify-content: space-between;
     height: 4rem;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.247);
+    position: absolute;
+    padding-inline: 3rem;
+    padding-block: 1rem;
+    top: 0;
+    left: 0;
+    z-index: 3;
     h1 {
         font-family: $font1;
         font-size: clamp(0.8rem , 4vw , 1.5rem);
         display: flex;
         align-items: center;
+        // margin-left: 1rem;
         gap: 4px;
         span{
             color: $pri;
         }
     }
-
+    
     .btns {
         display: flex;
+        height: 100%;
         gap: 1rem;
         justify-content: center;
         align-items: center;
+        .userDetails{
+            width: max-content;
+            padding-inline: 1.5rem;
+            padding-block: 8px;
+            background: linear-gradient(90deg , rgba(17, 17, 17, 0.616) , rgba(255, 255, 255, 0.226));
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+
+            &:hover{
+                background: linear-gradient(90deg ,rgba(255, 255, 255, 0.226) , rgba(17, 17, 17, 0.616) );
+            }
+        }
         .userBox{
             display: flex;
             align-items: center;

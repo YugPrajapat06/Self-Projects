@@ -12,6 +12,7 @@ export function useAuth() {
         try {
             const data = await register({username , email , password})
             setUser(data.user)
+            return data
         } catch (error) {
             console.error("Registration failed:", error)
         } finally {
@@ -24,6 +25,9 @@ export function useAuth() {
         try {
             const data = await login({email , password})
             setUser(data.user)
+            // console.log(data);
+            return data
+            
         } catch (error) {
             console.error("Login failed:", error)
         } finally {

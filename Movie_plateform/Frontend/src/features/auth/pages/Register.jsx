@@ -13,9 +13,9 @@ const Register = () => {
 
   async function handleSubmit(e) {
     e.preventDefault()
-    await handleRegister({ username, email, password })
+    const registerDetails = await handleRegister({ username, email, password })
     
-    if (user) {
+    if (registerDetails !== undefined && registerDetails.success) {
       navigate("/")
       setError("")
     }

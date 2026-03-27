@@ -1,7 +1,7 @@
 import React from 'react'
 import "./landingNav.scss"
 import { Navigate, NavLink, useNavigate } from 'react-router'
-import { Play } from "lucide-react"
+import { Play, User } from "lucide-react"
 import RouteLinks from './RouteLinks'
 import Protected from '../../auth/components/Protected'
 import { useAuth } from '../../auth/hooks/useAuth'
@@ -14,19 +14,23 @@ const LandingNav = () => {
     navigate("/")
   }
   return (
-    <div className="navbar">
+    <div className="LanNavbar">
       <h1> <Play /> MOVIES<span> HUB</span></h1>
       <Protected><RouteLinks /></Protected>
       <div className="btns">
+      
         {user ? (
           <>
-            <div className="userBox">
+            {/* <div className="userBox">
               <img src="https://i.pinimg.com/736x/10/0f/a9/100fa99fa6b7056f45125bac4c70c288.jpg" alt="" />
               <h4>{user.username}</h4>
             </div>
             <button onClick={() => {
               handleLogoutfun()
-            }} className='Xl-button'>Logout</button>
+            }} className='Xl-button'>Logout</button> */}
+            <button onClick={()=>{
+              navigate("/profile")
+            }} className='userDetails'>{<User className='lucideIcon'/>} {user.username}</button>
           </>
         ) : (
           <>

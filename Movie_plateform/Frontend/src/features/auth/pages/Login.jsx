@@ -15,9 +15,9 @@ const Login = () => {
     
     async function handleSubmit(e) {
         e.preventDefault()
-        await handleLogin({ email, password })
-        console.log(user)
-        if(user){ 
+        const loginDetails = await handleLogin({ email, password })
+        // console.log(loginDetails)
+        if(loginDetails !== undefined && loginDetails.success ){ 
             navigate("/")
             setError("")
         }

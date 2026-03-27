@@ -5,6 +5,7 @@ import Register from "./features/auth/pages/Register";
 import Protected from "./features/auth/components/Protected";
 import LandingPage from "./features/home/pages/LandingPage";
 import ShowTrailer from "./features/movie/pages/ShowTrailer";
+import ProfilePage from "./features/home/pages/ProfilePage";
 
 export const appRouter = createBrowserRouter([
     {
@@ -26,6 +27,10 @@ export const appRouter = createBrowserRouter([
     {
         path:"/show-trailer",
         element: <ShowTrailer/>
+    },
+    {
+        path: "/profile",
+        element: <Protected><ProfilePage/></Protected>
     }
 ])
 
